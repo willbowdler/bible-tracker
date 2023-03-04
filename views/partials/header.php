@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php require(base_path('styles.php')) ?>
+  <script type="application/javascript" src="progressTracker.js"></script>
   <title>Bible Tracker</title>
 </head>
 
