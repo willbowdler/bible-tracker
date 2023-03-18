@@ -1,9 +1,9 @@
 const progressNodes = {
-    whole: document.querySelector('.whole_progess'),
+    whole: document.querySelector('.whole_progress'),
     ot: document.querySelector('.ot_progress'),
     nt: document.querySelector('.nt_progress'),
   },
-  books = document.querySelectorAll('.books'),
+  books = document.querySelectorAll('.book'),
   totalBibleBooks = 66,
   totalOTBooks = 39,
   totalNTBooks = 27
@@ -16,10 +16,17 @@ const calculatePercentages = (selected) => {
   }
 }
 const covertPercentageToDegrees = (percentages) => {
-  for (node in progressNodes) {
+  console.log(progressNodes)
+  for (const node in progressNodes) {
+    console.log(node)
     const percent = percentages[node]
     const degree = 360 * percent
-    node.style.background = `conic-gradient(red ${degree}deg, white 0deg)`
+    progressNodes[
+      node
+    ].style.background = `conic-gradient(red ${degree}deg, white 0deg)`
+    progressNodes[node].innerHTML = `<h1 style='z-index:1'>${Math.floor(
+      percent * 100
+    )}</h1>`
   }
 }
 
